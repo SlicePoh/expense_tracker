@@ -16,6 +16,7 @@ export const Form = () => {
     
     const [title,setTitle]=useState("");
     const [amount,setAmount]=useState("");
+    const [type,setType]=useState("");
     const [category,setCategory]=useState("");
     const [categoryOpen,setCategoryOpen]=useState(false);
     const [modalOpen,setModalOpen]=useState(false);
@@ -31,6 +32,9 @@ export const Form = () => {
         }
         setAmount(val)
     };
+    const handleType=(e)=>{
+        setType(e.target.value);
+    };
     const handleCategory=(category)=>{
         setCategory(category)
         setCategoryOpen(false)
@@ -38,13 +42,14 @@ export const Form = () => {
     const [isAnimating,setIsAnimating]=useState(false);
     const notify = () => toast.warn("Insufficient data!!!");
     const handleSubmit=()=>{
-        if(title===''||amount===''||!category){
+        if(title===''||amount===''||type===''){
             notify();
             return;
         }
         const data={
             title,
             amount,
+            type,
             category,
             createdAt: new Date()
         }
@@ -77,12 +82,14 @@ export const Form = () => {
             </div>
             <div className={`flex bg-black h-8 md:h-auto w-full text-white rounded-lg p-1 md:p-2 m-2 md:m-4 `}>
                 <label className="bg-slate-800 rounded-lg p-1 mr-2 ">Type</label>
-                <input type="radio" name="Income" value="Income" className=" bg-black ml-10 outline-none text-gray-200" />
+                <input type="radio" name={type} value="Income" className=" bg-black ml-8 outline-none text-gray-200" onChange={handleType}/>
                 <div className={`${s.flexCenter} mx-2 `}>Income</div>
-                <input type="radio" name="Expenses" value="Expenses" className=" bg-black  outline-none text-gray-200" />
+                <input type="radio" name={type} value="Expense" className=" bg-black  outline-none text-gray-200" onChange={handleType}/>
                 <div className={`${s.flexCenter} mx-2 `}>Expense</div>
             </div>
-            <div className={` bg-black w-full text-white rounded-lg p-1 md:p-2 m-2 md:m-4`}>
+           
+
+            <div className={type==="Expense"? "bg-black w-full text-white rounded-lg p-1 md:p-2 m-2 md:m-4":"hidden"}>
                 <div className={`drop ${s.flexBetween}`} >
                     <label className="bg-slate-300 rounded-lg p-1 "
                         style={{

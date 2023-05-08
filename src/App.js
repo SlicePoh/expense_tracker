@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Navbar/>
-      <div className="w-full bg-[#32892F]">
+      <div className="w-full bg-[#03B5AA]">
         <Routes>
           <Route path="/" exact Component={Home}/>
           <Route path="/AddTransaction" Component={AddTransaction}/>

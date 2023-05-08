@@ -4,6 +4,7 @@ import { Card } from './Card'
 import bg from '../assets/bg.png'
 import s from '../style'
 import { ToastContainer,toast } from 'react-toastify'
+
 export const List = () => {
   const {expenseList: list,query}=useSelector((state)=>state.expenses);
   const filteredList=list.filter(item=>item.title.includes(query))
@@ -28,11 +29,13 @@ export const List = () => {
         )):
         <div className={`${s.flexCenter} flex-col`}>
           <img src={bg} alt="Empty Transaction List" className="m-10 w-[400px]" />
-          <div className=" text-base md:text-2xl font-bold ">
+          <div className=" text-sm md:text-2xl font-bold ">
             Uh Oh!! Your Transaction List is Empty
           </div>
         </div>
         }
+       
+     
     </div>
   )
 }

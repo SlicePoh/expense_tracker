@@ -22,7 +22,7 @@ export const Topfold = () => {
                     <input value={query} placeholder="Search for transactions" onChange={(e)=>handleQuery(e)} className=" outline-none w-full p-1 mr-4"/>
                 </div>
                 <Link to="/AddTransaction" >
-                    <button className={`${s.flexCenter} w-8 md:w-16 cursor-pointer bg-black text-white rounded-lg border-2 p-1 mx-4 border-black`}>
+                    <button className={`${s.flexCenter} w-12 md:w-16 cursor-pointer bg-black text-white rounded-lg border-2 p-1 mx-4 border-black`}>
                         <TiDocumentAdd className="text-sm md:text-xl"/>
                         <div className="font-semibold ">Add</div>
                     </button>
@@ -31,14 +31,14 @@ export const Topfold = () => {
             : 
             <div className={`${s.flexCenter} mt-6 mx-0 md:mx-44`}>
                 <Link to='/'>
-                    <button className={`${s.flexCenter} w-10 md:w-20 cursor-pointer bg-indigo-500 text-black rounded-lg border-2 p-1 mx-6 md:mx-16 border-black`}>
+                    <button className={`${s.flexCenter} w-16 md:w-20 cursor-pointer bg-indigo-500 text-black rounded-lg border-2 p-1 mx-8 md:mx-16 border-black`}>
                         <TbArrowBack className=" mr-1 text-base md:text-xl"/>
                         <div className="font-semibold">Back</div>
                     </button>
                 </Link>
                 <Link to='/'>
-                    <button className={`${s.flexCenter} w-10 md:w-24 cursor-pointer bg-red-500 text-black rounded-lg border-2 p-1 mx-6 md:mx-16 border-black`}>
-                        <TiCancel className=" mr-1 text-base md:text-xl"/>
+                    <button className={`${s.flexCenter} w-16 md:w-24 cursor-pointer bg-red-500 text-black rounded-lg border-2 p-1 mx-8 md:mx-16 border-black`}>
+                        <TiCancel className=" mr-0 md:mr-1 text-base md:text-xl"/>
                         <div className="font-semibold ">Cancel</div>
                     </button>
                 </Link>
